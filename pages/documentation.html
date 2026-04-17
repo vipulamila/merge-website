@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Documentation — Merge Engine</title>
+<meta name="description" content="Full documentation for Merge Engine — Salesforce duplicate cleaner. Installation guides, feature docs, and release notes.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+
+<!-- LOADER -->
+<div id="loader">
+  <div class="loader-logo">Merge<span>Engine</span></div>
+  <div class="loader-track"><div class="loader-fill" id="loaderFill"></div></div>
+  <div class="loader-msg" id="loaderMsg">Loading…</div>
+</div>
+
+<!-- NAV -->
+<nav id="mainNav">
+  <div class="nav-inner">
+    <a href="../index.html" class="nav-logo">
+      <div class="logo-icon">
+        <svg viewBox="0 0 24 24"><path d="M8 6H4v4M4 6l5 5M16 6h4v4M20 6l-5 5M8 18H4v-4M4 18l5-5M16 18h4v-4M20 18l-5-5"/></svg>
+      </div>
+      Merge<span style="color:var(--accent)">Engine</span>
+    </a>
+    <div class="nav-links">
+      <a href="../index.html#how-it-works">How it Works</a>
+      <a href="../index.html#features">Features</a>
+      <a href="../index.html#security">Security</a>
+      <a href="documentation.html" style="color:var(--accent);font-weight:600">Docs</a>
+      <a href="contact.html">Contact</a>
+      <a href="../index.html#get-started" class="nav-cta">Get Started Free →</a>
+    </div>
+    <button class="nav-hamburger" id="hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="../index.html#how-it-works" onclick="closeMobileMenu()">How it Works</a>
+  <a href="../index.html#features" onclick="closeMobileMenu()">Features</a>
+  <a href="documentation.html" onclick="closeMobileMenu()">Docs</a>
+  <a href="contact.html" onclick="closeMobileMenu()">Contact</a>
+  <a href="../index.html#get-started" onclick="closeMobileMenu()" style="background:var(--accent-soft);color:var(--accent);font-weight:600">Get Started Free →</a>
+</div>
+
+<!-- DOCS LAYOUT -->
+<div class="docs-layout">
+
+  <!-- SIDEBAR -->
+  <aside class="docs-sidebar">
+    <h4>Getting Started</h4>
+    <a href="#overview" class="docs-nav-link active">Overview</a>
+    <a href="#installation" class="docs-nav-link">Installation</a>
+    <a href="#permissions" class="docs-nav-link">Permissions Setup</a>
+    <a href="#quickstart" class="docs-nav-link">Quick Start Guide</a>
+
+    <h4>Core Features</h4>
+    <a href="#manual-search" class="docs-nav-link">Manual Search</a>
+    <a href="#ai-search" class="docs-nav-link">AI Search ✦ New</a>
+    <a href="#merge-process" class="docs-nav-link">Merging Records</a>
+    <a href="#bulk-merge" class="docs-nav-link">Bulk Merge</a>
+    <a href="#csv-export" class="docs-nav-link">CSV Backup Export</a>
+    <a href="#filter-builder" class="docs-nav-link">Custom Filter Builder</a>
+
+    <h4>Objects &amp; Data</h4>
+    <a href="#standard-objects" class="docs-nav-link">Standard Objects</a>
+    <a href="#custom-objects" class="docs-nav-link">Custom Objects</a>
+    <a href="#related-records" class="docs-nav-link">Related Records</a>
+
+    <h4>Security</h4>
+    <a href="#data-security" class="docs-nav-link">Data Security</a>
+    <a href="#profiles" class="docs-nav-link">Profiles &amp; Permissions</a>
+
+    <h4>Reference</h4>
+    <a href="#release-notes" class="docs-nav-link">Release Notes</a>
+    <a href="#faq-docs" class="docs-nav-link">FAQ</a>
+    <a href="contact.html" class="docs-nav-link">Get Support →</a>
+  </aside>
+
+  <!-- CONTENT -->
+  <main class="docs-content">
+
+    <div class="section-tag" style="margin-bottom:16px"><div class="dot"></div> Documentation</div>
+    <h1 id="overview">Merge Engine Documentation</h1>
+    <p>Welcome to the Merge Engine documentation. This guide covers everything you need to install, configure, and use Merge Engine to deduplicate your Salesforce data.</p>
+
+    <div class="docs-callout">
+      <strong>New in v2.4:</strong> AI Search mode now supports fuzzy matching on Phone fields with automatic normalization. See <a href="#ai-search" style="color:var(--accent)">AI Search</a> for details.
+    </div>
+
+    <h2 id="installation">Installation</h2>
+    <p>Merge Engine is available as a managed package on the Salesforce AppExchange. Installation takes approximately 5 minutes and requires no coding.</p>
+
+    <h3>Requirements</h3>
+    <ul>
+      <li>Salesforce Professional, Enterprise, Unlimited, or Developer Edition</li>
+      <li>System Administrator profile (for initial installation)</li>
+      <li>API access enabled on your Salesforce org</li>
+    </ul>
+
+    <h3>Step-by-step installation</h3>
+    <ol>
+      <li>Visit the <a href="https://appexchange.salesforce.com" target="_blank" style="color:var(--accent)">Merge Engine AppExchange listing</a>.</li>
+      <li>Click <strong>Get It Now</strong> and log in with your Salesforce credentials.</li>
+      <li>Choose <strong>Install for All Users</strong> or <strong>Install for Specific Profiles</strong>.</li>
+      <li>Approve the required permissions and click <strong>Install</strong>.</li>
+      <li>Once installed, find <strong>Merge Engine</strong> in the App Launcher (⋮⋮⋮).</li>
+    </ol>
+
+    <div class="docs-callout">
+      <strong>Tip:</strong> If you see a "Third Party Access" warning during installation, this is for future integrations — Merge Engine itself does not transmit data externally.
+    </div>
+
+    <h2 id="permissions">Permissions Setup</h2>
+    <p>After installation, assign the correct permission sets to users who need access to Merge Engine.</p>
+
+    <h3>Available Permission Sets</h3>
+    <ul>
+      <li><code>Merge Engine Admin</code> — Full access: can merge, export, and configure settings</li>
+      <li><code>Merge Engine User</code> — Can search for and merge records, but cannot export or change settings</li>
+      <li><code>Merge Engine Read Only</code> — Can view duplicate groups but cannot merge</li>
+    </ul>
+
+    <h3>Assigning Permission Sets</h3>
+    <ol>
+      <li>Go to <strong>Setup → Users → Permission Sets</strong></li>
+      <li>Click <strong>Merge Engine Admin</strong> (or the appropriate set)</li>
+      <li>Click <strong>Manage Assignments → Add Assignments</strong></li>
+      <li>Select the users and click <strong>Assign</strong></li>
+    </ol>
+
+    <h2 id="quickstart">Quick Start Guide</h2>
+    <p>After installation and permissions setup, here's how to run your first duplicate cleanup:</p>
+    <ol>
+      <li>Open the <strong>App Launcher</strong> and search for "Merge Engine"</li>
+      <li>Select the <strong>Salesforce Object</strong> you want to deduplicate (e.g., Contact)</li>
+      <li>Choose <strong>AI Search</strong> mode for best results</li>
+      <li>Select the fields to compare (Name, Email, Phone are recommended)</li>
+      <li>Click <strong>Find Duplicates</strong></li>
+      <li>Review the duplicate groups — star indicates the recommended primary record</li>
+      <li>Optional: Click <strong>Export CSV</strong> to create a backup before merging</li>
+      <li>Select the groups you want to merge and click <strong>Merge Selected</strong></li>
+      <li>Confirm the merge in the dialog</li>
+    </ol>
+
+    <h2 id="manual-search">Manual Search</h2>
+    <p>Manual Search lets you build precise queries using specific field values. Use this when you know exactly what you're looking for — for example, all contacts with the email domain <code>@acme.com</code>.</p>
+    <p>In Manual Search mode, you can:</p>
+    <ul>
+      <li>Search by exact field value match</li>
+      <li>Combine multiple fields with AND / OR logic</li>
+      <li>Use wildcard characters (<code>%</code>) in text fields</li>
+      <li>Filter by record owner, created date, or any other field</li>
+    </ul>
+
+    <h2 id="ai-search">AI Search <span class="docs-badge new">NEW</span></h2>
+    <p>AI Search is the recommended mode for most deduplication tasks. It uses advanced string similarity algorithms to find records that are clearly the same entity, even when field values differ slightly.</p>
+
+    <h3>How AI Matching Works</h3>
+    <p>Merge Engine uses a combination of techniques to compute a similarity score between records:</p>
+    <ul>
+      <li><strong>Jaro-Winkler Distance</strong> — Works well for names and short strings. Gives extra weight to prefix matches.</li>
+      <li><strong>Token Overlap (Jaccard)</strong> — Splits text into words/tokens and measures how many tokens two records share. Handles word reordering.</li>
+      <li><strong>Phone Normalization</strong> — Strips country codes, brackets, spaces, and dashes before comparing phone numbers.</li>
+      <li><strong>Email Domain Grouping</strong> — Groups contacts who share the same email domain, regardless of the local part.</li>
+    </ul>
+
+    <h3>Similarity Threshold</h3>
+    <p>You can configure the minimum similarity percentage (default: <strong>80%</strong>) below which two records will not be grouped together. Lower thresholds find more matches but may include false positives.</p>
+
+    <pre><code>Recommended thresholds:
+  Names only:          80–85%
+  Name + Email:        85–90%
+  Name + Email + Phone: 90%+</code></pre>
+
+    <h2 id="merge-process">Merging Records</h2>
+    <p>When you're ready to merge a duplicate group:</p>
+    <ol>
+      <li>Identify the <strong>Primary Record</strong> — the one to keep. Merge Engine suggests the best candidate (marked ★) based on data completeness and record age.</li>
+      <li>Review field values from each duplicate to confirm you have the right primary</li>
+      <li>Click <strong>Merge Group</strong></li>
+      <li>Confirm the action in the dialog</li>
+    </ol>
+
+    <div class="docs-callout">
+      <strong>Important:</strong> For standard Salesforce objects (Contact, Lead, Account), Merge Engine uses the native Salesforce Merge API. This means the merge is recorded in Salesforce's Audit Trail and cannot be reversed through Merge Engine — but your org's <a href="#csv-export" style="color:var(--accent)">CSV backup</a> can help you restore data manually if needed.
+    </div>
+
+    <h2 id="bulk-merge">Bulk Merge</h2>
+    <p>To merge multiple groups at once:</p>
+    <ol>
+      <li>After finding duplicates, use the <strong>checkbox</strong> on each group to select it</li>
+      <li>Use <strong>Select All</strong> to check all groups on the current page</li>
+      <li>Click <strong>Merge X Groups</strong> at the top of the list</li>
+      <li>Review the summary in the confirmation dialog</li>
+      <li>Click <strong>Confirm Bulk Merge</strong></li>
+    </ol>
+    <p>Bulk merge processes groups sequentially and shows a real-time progress indicator. You can safely navigate away — processing continues in the background.</p>
+
+    <h2 id="csv-export">CSV Backup Export</h2>
+    <p>Before any merge session, we strongly recommend exporting a CSV backup. This gives you a snapshot of all records that will be affected.</p>
+    <p>To export:</p>
+    <ol>
+      <li>After finding duplicates, click <strong>Export CSV</strong> in the toolbar</li>
+      <li>Choose what to include: all records in duplicate groups, or only the records that will be deleted</li>
+      <li>Your browser will download a <code>.csv</code> file immediately</li>
+    </ol>
+    <p>The CSV includes all field values Merge Engine has access to, including all standard and custom fields on the object.</p>
+
+    <h2 id="filter-builder">Custom Filter Builder</h2>
+    <p>The Filter Builder lets you narrow the pool of records before running duplicate detection. This is useful for large orgs where you want to focus on a specific subset — for example, "only contacts in the US" or "only accounts created in the last 90 days".</p>
+    <p>Each filter row contains:</p>
+    <ul>
+      <li><strong>Field</strong> — Any field on the object, including custom fields</li>
+      <li><strong>Operator</strong> — equals, contains, starts with, greater than, is not null, etc.</li>
+      <li><strong>Value</strong> — The comparison value</li>
+    </ul>
+    <p>Rows can be combined with <strong>AND</strong> (all conditions must match) or <strong>OR</strong> (any condition matches) logic. The generated SOQL is shown live in the preview panel.</p>
+
+    <h2 id="standard-objects">Standard Objects</h2>
+    <p>Merge Engine has full support for Salesforce's three standard mergeable objects:</p>
+    <ul>
+      <li><strong>Contact</strong> — Supports native Salesforce Contact merge. Up to 3 records per merge.</li>
+      <li><strong>Lead</strong> — Supports native Salesforce Lead merge. Up to 3 records per merge.</li>
+      <li><strong>Account</strong> — Supports native Salesforce Account merge. Up to 3 records per merge.</li>
+    </ul>
+
+    <h2 id="custom-objects">Custom Objects</h2>
+    <p>For all other objects — including custom objects and non-standard standard objects — Merge Engine uses a <strong>re-parent-and-delete</strong> strategy:</p>
+    <ol>
+      <li>All child records (lookups, master-detail) are re-pointed to the primary record</li>
+      <li>Field values from non-primary records are optionally copied to the primary if the primary field is blank</li>
+      <li>Non-primary records are deleted</li>
+    </ol>
+
+    <h2 id="related-records">Related Records</h2>
+    <p>When merging accounts or custom objects, Merge Engine automatically re-parents the following relationship types:</p>
+    <ul>
+      <li>Lookup relationships (child records pointing to the merged record)</li>
+      <li>Master-detail relationships</li>
+      <li>Activities (Tasks, Events) and Email Messages</li>
+      <li>Chatter feeds and attachments</li>
+      <li>Files and ContentDocumentLinks</li>
+    </ul>
+
+    <h2 id="data-security">Data Security</h2>
+    <p>Merge Engine is a 100% native Salesforce managed package. All processing happens inside your Salesforce org:</p>
+    <ul>
+      <li>No data is transmitted to external servers</li>
+      <li>The AI similarity matching runs client-side in JavaScript — not in any cloud we control</li>
+      <li>All Salesforce API calls are made server-side (Apex), inside your org</li>
+      <li>The package was reviewed and approved by Salesforce's Security Review team</li>
+    </ul>
+
+    <h2 id="profiles">Profiles &amp; Permissions</h2>
+    <p>Merge Engine respects all Salesforce security settings:</p>
+    <ul>
+      <li><strong>Object-Level Security (OLS)</strong> — Users who cannot read or delete a record type cannot see it in Merge Engine</li>
+      <li><strong>Field-Level Security (FLS)</strong> — Fields a user cannot see are hidden in the duplicate comparison view</li>
+      <li><strong>Record Sharing Rules</strong> — Users only see records they have access to based on org-wide defaults, roles, and sharing rules</li>
+    </ul>
+
+    <h2 id="release-notes">Release Notes</h2>
+
+    <h3>v2.4.0 — April 2025</h3>
+    <ul>
+      <li>Phone number fuzzy matching with normalization (new in AI Search)</li>
+      <li>Improved bulk merge performance — 3× faster for groups over 1,000 records</li>
+      <li>CSV export now includes Related Record counts per group</li>
+      <li>Bug fix: Custom object re-parent now handles polymorphic lookups correctly</li>
+    </ul>
+
+    <h3>v2.3.0 — January 2025</h3>
+    <ul>
+      <li>Email domain grouping mode added to AI Search</li>
+      <li>Filter Builder now supports relative date operators (e.g., "Last 30 Days")</li>
+      <li>New Read Only permission set added</li>
+      <li>SOQL preview panel added to Filter Builder</li>
+    </ul>
+
+    <h3>v2.2.0 — October 2024</h3>
+    <ul>
+      <li>Bulk merge — merge multiple groups in a single action</li>
+      <li>Progress indicator for large merge operations</li>
+      <li>Support for merging ContentDocumentLinks (Files) during Account merge</li>
+    </ul>
+
+    <h2 id="faq-docs">Frequently Asked Questions</h2>
+
+    <h3>Can I undo a merge?</h3>
+    <p>Merges performed on standard objects (Contact, Lead, Account) cannot be automatically reversed — this is a Salesforce platform limitation. This is why we strongly recommend exporting a CSV backup before every merge session. With your backup, a Salesforce admin can manually restore records.</p>
+
+    <h3>Why is Merge Engine only finding some of my duplicates?</h3>
+    <p>Check your similarity threshold — it may be set too high. Try lowering it to 75–80%. Also ensure you're searching on the right fields; AI Search works best when you include both Name and Email.</p>
+
+    <h3>Can I schedule automatic duplicate detection?</h3>
+    <p>Scheduled detection is on the roadmap for v2.5. In the current release, all duplicate detection is triggered manually.</p>
+
+    <h3>What's the maximum number of records I can merge at once?</h3>
+    <p>Bulk merge can handle up to 10,000 records per session before hitting Salesforce governor limits. For very large orgs, we recommend running merge sessions in batches filtered by record owner or date range.</p>
+
+    <div style="margin-top:48px;padding:28px;background:var(--accent-soft);border-radius:var(--radius);border:1px solid var(--accent-mid);text-align:center">
+      <h3 style="font-family:var(--font-display);font-size:20px;color:var(--ink);margin-bottom:8px">Still have questions?</h3>
+      <p style="color:var(--ink3);margin-bottom:20px;font-size:15px">Our team is happy to help via email or live chat.</p>
+      <a href="contact.html" class="btn-primary" style="display:inline-flex">Contact Support →</a>
+    </div>
+
+  </main>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="footer-logo-text">Merge<span>Engine</span></div>
+        <p>The most intelligent duplicate removal tool built natively for Salesforce.</p>
+      </div>
+      <div class="footer-col">
+        <h5>Product</h5>
+        <a href="../index.html#features">Features</a>
+        <a href="../index.html#how-it-works">How it Works</a>
+        <a href="../index.html#ai">AI Matching</a>
+        <a href="../index.html#security">Security</a>
+      </div>
+      <div class="footer-col">
+        <h5>Resources</h5>
+        <a href="documentation.html">Documentation</a>
+        <a href="#installation">Installation Guide</a>
+        <a href="#release-notes">Release Notes</a>
+        <a href="https://appexchange.salesforce.com" target="_blank">AppExchange</a>
+      </div>
+      <div class="footer-col">
+        <h5>Support</h5>
+        <a href="contact.html">Contact Support</a>
+        <a href="../index.html#faq">FAQ</a>
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="terms.html">Terms of Service</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div style="font-size:13px;color:rgba(255,255,255,0.35)">© 2025 Merge Engine. Available on Salesforce AppExchange.</div>
+      <div style="display:flex;align-items:center;gap:6px;font-size:13px;color:rgba(255,255,255,0.35)">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        Built natively for Salesforce · No external data storage
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="../js/main.js"></script>
+</body>
+</html>

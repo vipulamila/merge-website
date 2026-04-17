@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact Us — Merge Engine</title>
+<meta name="description" content="Get in touch with the Merge Engine team. We're here to help with installation, support, and any questions about Salesforce duplicate management.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+
+<!-- LOADER -->
+<div id="loader">
+  <div class="loader-logo">Merge<span>Engine</span></div>
+  <div class="loader-track"><div class="loader-fill" id="loaderFill"></div></div>
+  <div class="loader-msg" id="loaderMsg">Loading…</div>
+</div>
+
+<!-- NAV -->
+<nav id="mainNav">
+  <div class="nav-inner">
+    <a href="../index.html" class="nav-logo">
+      <div class="logo-icon">
+        <svg viewBox="0 0 24 24"><path d="M8 6H4v4M4 6l5 5M16 6h4v4M20 6l-5 5M8 18H4v-4M4 18l5-5M16 18h4v-4M20 18l-5-5"/></svg>
+      </div>
+      Merge<span style="color:var(--accent)">Engine</span>
+    </a>
+    <div class="nav-links">
+      <a href="../index.html#how-it-works">How it Works</a>
+      <a href="../index.html#features">Features</a>
+      <a href="../index.html#security">Security</a>
+      <a href="documentation.html">Docs</a>
+      <a href="contact.html" style="color:var(--accent);font-weight:600">Contact</a>
+      <a href="../index.html#get-started" class="nav-cta">Get Started Free →</a>
+    </div>
+    <button class="nav-hamburger" id="hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="../index.html#how-it-works" onclick="closeMobileMenu()">How it Works</a>
+  <a href="../index.html#features" onclick="closeMobileMenu()">Features</a>
+  <a href="../index.html#security" onclick="closeMobileMenu()">Security</a>
+  <a href="documentation.html" onclick="closeMobileMenu()">Docs</a>
+  <a href="contact.html" onclick="closeMobileMenu()">Contact</a>
+  <a href="../index.html#get-started" onclick="closeMobileMenu()" style="background:var(--accent-soft);color:var(--accent);font-weight:600">Get Started Free →</a>
+</div>
+
+<!-- CONTACT HERO -->
+<div class="contact-hero">
+  <div class="section-tag" style="margin-bottom:16px"><div class="dot"></div> Support</div>
+  <h1 class="section-headline" style="text-align:center;margin-bottom:12px">Get in touch</h1>
+  <p class="section-sub center">Have a question, need help getting started, or want to request a feature? We'd love to hear from you. Typical response time is under 4 business hours.</p>
+</div>
+
+<!-- CONTACT GRID -->
+<div class="contact-grid">
+
+  <!-- LEFT: Info -->
+  <div class="contact-info">
+    <h3>We're here to help</h3>
+    <p>Whether you're evaluating Merge Engine, troubleshooting an issue, or looking for best practices — our team of Salesforce specialists has you covered.</p>
+
+    <div class="contact-method">
+      <div class="cm-icon" style="background:var(--accent-soft)">
+        <svg viewBox="0 0 24 24" stroke="var(--accent)"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+      </div>
+      <div>
+        <div class="cm-label">Email</div>
+        <div class="cm-value">support@mergeengine.io</div>
+        <div class="cm-sub">Response within 4 business hours</div>
+      </div>
+    </div>
+
+    <div class="contact-method">
+      <div class="cm-icon" style="background:var(--green-soft)">
+        <svg viewBox="0 0 24 24" stroke="var(--green)"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
+      </div>
+      <div>
+        <div class="cm-label">Live Chat</div>
+        <div class="cm-value">Chat with us in-app</div>
+        <div class="cm-sub">Available Mon–Fri, 9am–6pm IST</div>
+      </div>
+    </div>
+
+    <div class="contact-method">
+      <div class="cm-icon" style="background:var(--amber-soft)">
+        <svg viewBox="0 0 24 24" stroke="var(--amber)"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+      </div>
+      <div>
+        <div class="cm-label">Documentation</div>
+        <div class="cm-value"><a href="documentation.html" style="color:var(--accent);text-decoration:underline">Browse the docs →</a></div>
+        <div class="cm-sub">Installation guides, tutorials, FAQs</div>
+      </div>
+    </div>
+
+    <div class="contact-method">
+      <div class="cm-icon" style="background:var(--accent-soft)">
+        <svg viewBox="0 0 24 24" stroke="var(--accent)"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
+      </div>
+      <div>
+        <div class="cm-label">Book a Demo</div>
+        <div class="cm-value">Schedule a 30-min walkthrough</div>
+        <div class="cm-sub">See Merge Engine live with your own data</div>
+      </div>
+    </div>
+
+    <!-- Response time note -->
+    <div style="margin-top:28px;background:var(--green-soft);border:1px solid #6ee7b7;border-radius:var(--radius-sm);padding:14px 18px;font-size:13px;color:#065f46;line-height:1.6">
+      <strong>⚡ Fast support, always.</strong><br>
+      Our team responds to every support ticket. Average first-response time for paying customers is under 2 hours.
+    </div>
+  </div>
+
+  <!-- RIGHT: Form -->
+  <div class="contact-form-card">
+    <h3>Send us a message</h3>
+    <p>Fill in the details below and we'll get back to you as soon as possible.</p>
+
+    <form id="contactForm" novalidate>
+      <div class="form-row">
+        <div class="form-group">
+          <label for="firstName">First Name <span style="color:var(--red)">*</span></label>
+          <input type="text" id="firstName" name="firstName" placeholder="Jane" autocomplete="given-name">
+          <span class="field-error" id="firstNameError"></span>
+        </div>
+        <div class="form-group">
+          <label for="lastName">Last Name <span style="color:var(--red)">*</span></label>
+          <input type="text" id="lastName" name="lastName" placeholder="Doe" autocomplete="family-name">
+          <span class="field-error" id="lastNameError"></span>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="email">Work Email <span style="color:var(--red)">*</span></label>
+        <input type="email" id="email" name="email" placeholder="jane@yourcompany.com" autocomplete="email">
+        <span class="field-error" id="emailError"></span>
+      </div>
+
+      <div class="form-group">
+        <label for="company">Company / Org Name <span style="color:var(--red)">*</span></label>
+        <input type="text" id="company" name="company" placeholder="Acme Corporation" autocomplete="organization">
+        <span class="field-error" id="companyError"></span>
+      </div>
+
+      <div class="form-group">
+        <label for="subject">Subject <span style="color:var(--red)">*</span></label>
+        <select id="subject" name="subject">
+          <option value="">— Select a topic —</option>
+          <option value="installation">Installation Help</option>
+          <option value="merging">Merging Records Issue</option>
+          <option value="ai-matching">AI / Duplicate Matching</option>
+          <option value="billing">Billing &amp; Licensing</option>
+          <option value="feature-request">Feature Request</option>
+          <option value="demo">Request a Demo</option>
+          <option value="security">Security / Compliance</option>
+          <option value="other">Other</option>
+        </select>
+        <span class="field-error" id="subjectError"></span>
+      </div>
+
+      <div class="form-group">
+        <label for="sfOrg">Salesforce Org ID <span style="color:var(--ink3);font-weight:400">(optional)</span></label>
+        <input type="text" id="sfOrg" name="sfOrg" placeholder="00D... (helps us look up your install)">
+      </div>
+
+      <div class="form-group">
+        <label for="message">Message <span style="color:var(--red)">*</span></label>
+        <textarea id="message" name="message" placeholder="Describe your question or issue in as much detail as possible…"></textarea>
+        <span class="field-error" id="messageError"></span>
+      </div>
+
+      <div class="form-group" style="flex-direction:row;align-items:flex-start;gap:10px;margin-bottom:20px">
+        <input type="checkbox" id="consent" name="consent" style="width:auto;margin-top:3px;accent-color:var(--accent)">
+        <label for="consent" style="font-size:13px;color:var(--ink3);font-weight:400;cursor:pointer">
+          I agree to be contacted by the Merge Engine team regarding my query. See our <a href="privacy.html" style="color:var(--accent);text-decoration:underline">Privacy Policy</a>.
+        </label>
+      </div>
+
+      <button type="submit" class="form-submit">
+        <span class="btn-text">Send Message →</span>
+        <span class="btn-spinner" style="display:none">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="animation:spin 0.8s linear infinite"><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/></svg>
+        </span>
+      </button>
+    </form>
+
+    <div class="success-banner" id="successBanner">
+      <h4>✓ Message sent successfully!</h4>
+      <p>Thanks for reaching out. We'll reply to your email within 4 business hours. In the meantime, you might find your answer in our <a href="documentation.html" style="color:#047857;text-decoration:underline;font-weight:600">documentation</a>.</p>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="footer-logo-text">Merge<span>Engine</span></div>
+        <p>The most intelligent duplicate removal tool built natively for Salesforce. Trusted by 500+ admins worldwide.</p>
+      </div>
+      <div class="footer-col">
+        <h5>Product</h5>
+        <a href="../index.html#features">Features</a>
+        <a href="../index.html#how-it-works">How it Works</a>
+        <a href="../index.html#ai">AI Matching</a>
+        <a href="../index.html#security">Security</a>
+      </div>
+      <div class="footer-col">
+        <h5>Resources</h5>
+        <a href="documentation.html">Documentation</a>
+        <a href="documentation.html#installation">Installation Guide</a>
+        <a href="documentation.html#release-notes">Release Notes</a>
+        <a href="https://appexchange.salesforce.com" target="_blank">AppExchange Listing</a>
+      </div>
+      <div class="footer-col">
+        <h5>Support</h5>
+        <a href="contact.html">Contact Support</a>
+        <a href="../index.html#faq">FAQ</a>
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="terms.html">Terms of Service</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div style="font-size:13px;color:rgba(255,255,255,0.35)">© 2025 Merge Engine. Available on Salesforce AppExchange.</div>
+      <div style="display:flex;align-items:center;gap:6px;font-size:13px;color:rgba(255,255,255,0.35)">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        Built natively for Salesforce · No external data storage
+      </div>
+    </div>
+  </div>
+</footer>
+
+<style>
+@keyframes spin { to { transform: rotate(360deg); } }
+</style>
+<script src="../js/main.js"></script>
+</body>
+</html>

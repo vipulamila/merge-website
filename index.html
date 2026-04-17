@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Merge Engine — Salesforce Duplicate Cleaner</title>
+<meta name="description" content="Stop losing deals to duplicate contacts, leads, and accounts. Merge Engine finds and removes duplicates from Salesforce automatically — no coding required.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<!-- LOADER -->
+<div id="loader">
+  <div class="loader-logo">Merge<span>Engine</span></div>
+  <div class="loader-track"><div class="loader-fill" id="loaderFill"></div></div>
+  <div class="loader-msg" id="loaderMsg">Loading…</div>
+</div>
+
+<!-- NAV -->
+<nav id="mainNav">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">
+      <div class="logo-icon">
+        <svg viewBox="0 0 24 24"><path d="M8 6H4v4M4 6l5 5M16 6h4v4M20 6l-5 5M8 18H4v-4M4 18l5-5M16 18h4v-4M20 18l-5-5"/></svg>
+      </div>
+      Merge<span style="color:var(--accent)">Engine</span>
+    </a>
+    <div class="nav-links">
+      <a href="#how-it-works">How it Works</a>
+      <a href="#features">Features</a>
+      <a href="#security">Security</a>
+      <a href="pages/documentation.html">Docs</a>
+      <a href="pages/contact.html">Contact</a>
+      <a href="#get-started" class="nav-cta">Get Started Free →</a>
+    </div>
+    <button class="nav-hamburger" id="hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#how-it-works" onclick="closeMobileMenu()">How it Works</a>
+  <a href="#features" onclick="closeMobileMenu()">Features</a>
+  <a href="#security" onclick="closeMobileMenu()">Security</a>
+  <a href="pages/documentation.html" onclick="closeMobileMenu()">Docs</a>
+  <a href="pages/contact.html" onclick="closeMobileMenu()">Contact</a>
+  <a href="#get-started" onclick="closeMobileMenu()" style="background:var(--accent-soft);color:var(--accent);font-weight:600">Get Started Free →</a>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner">
+    <div>
+      <div class="hero-badge">
+        <span class="pulse"></span>
+        Available on AppExchange
+      </div>
+      <h1 class="hero-headline reveal">Clean Up Your<br>Salesforce Data<br><em>In Minutes</em></h1>
+      <p class="hero-desc reveal reveal-delay-1">Stop losing deals to duplicate contacts, leads, and accounts. Merge Engine finds and removes duplicates from Salesforce automatically — no coding required.</p>
+      <div class="hero-actions reveal reveal-delay-2">
+        <a href="https://appexchange.salesforce.com" target="_blank" class="btn-primary">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+          Get it on AppExchange
+        </a>
+        <a href="#how-it-works" class="btn-secondary">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+          See how it works
+        </a>
+      </div>
+      <div class="hero-trust reveal reveal-delay-3">
+        <div class="hero-trust-avatars">
+          <div class="avatar" style="background:#dbeafe;color:var(--accent)">JK</div>
+          <div class="avatar" style="background:#dcfce7;color:#166534">SR</div>
+          <div class="avatar" style="background:#fef9c3;color:#854d0e">AM</div>
+          <div class="avatar" style="background:#fce7f3;color:#9d174d">LP</div>
+          <div class="avatar" style="background:#f3e8ff;color:#6b21a8">TW</div>
+        </div>
+        <div>
+          <div class="hero-stars">★★★★★</div>
+          <div class="hero-trust-text">Loved by 500+ Salesforce Admins worldwide</div>
+        </div>
+      </div>
+    </div>
+    <div class="hero-visual reveal reveal-delay-1">
+      <div class="floating-card fc-1">
+        <div class="fc-icon"><div class="fc-dot" style="background:var(--green)"></div><span style="font-size:11px;color:var(--ink3)">Merged Today</span></div>
+        <div class="fc-num" style="color:var(--green)">247</div>
+        <div class="fc-label">duplicate records</div>
+      </div>
+      <div class="mockup-bar">
+        <div class="mockup-dots">
+          <div class="mockup-dot r"></div>
+          <div class="mockup-dot y"></div>
+          <div class="mockup-dot g"></div>
+        </div>
+        <div class="mockup-title">Merge Engine — Salesforce</div>
+      </div>
+      <div class="hero-mockup" style="border-radius:0 0 var(--radius-lg) var(--radius-lg);border-top:none">
+        <div class="mockup-body">
+          <div class="mockup-header">
+            <div class="mockup-icon">
+              <svg viewBox="0 0 24 24"><path d="M8 6H4v4M4 6l5 5M16 6h4v4M20 6l-5 5M8 18H4v-4M4 18l5-5M16 18h4v-4M20 18l-5-5" stroke="#fff" stroke-width="2" stroke-linecap="round" fill="none"/></svg>
+            </div>
+            <div class="mockup-text">
+              <h4>Merge Engine</h4>
+              <p>Deduplicate &amp; consolidate Salesforce records</p>
+            </div>
+          </div>
+          <div class="mockup-modes">
+            <div class="mockup-mode">Manual Search</div>
+            <div class="mockup-mode active ai">
+              <span>AI Search</span>
+              <span class="ai-badge">NEW</span>
+            </div>
+          </div>
+          <div class="mockup-group">
+            <div class="group-header">
+              <div class="group-badge">Fuzzy: Name</div>
+              <span style="flex:1">Acme Corp · ~94% match</span>
+              <span class="group-count">3 records</span>
+            </div>
+            <div class="group-row primary">
+              <span class="star">★</span>
+              <div style="flex:1">
+                <div class="row-name">Acme Corporation</div>
+                <div class="row-email">acme@acmecorp.com</div>
+              </div>
+              <span class="match-pct">Primary</span>
+            </div>
+            <div class="group-row">
+              <span style="width:14px"></span>
+              <div style="flex:1">
+                <div class="row-name">Acme Corp.</div>
+                <div class="row-email">info@acmecorp.com</div>
+              </div>
+              <span class="match-pct">97%</span>
+            </div>
+            <div class="group-row">
+              <span style="width:14px"></span>
+              <div style="flex:1">
+                <div class="row-name">ACME Corp</div>
+                <div class="row-email">sales@acme.com</div>
+              </div>
+              <span class="match-pct">91%</span>
+            </div>
+          </div>
+          <div class="mockup-group">
+            <div class="group-header">
+              <div class="group-badge" style="background:#f0fdf4;color:#166534">Exact: Email</div>
+              <span style="flex:1">john.smith@example.com</span>
+              <span class="group-count">2 records</span>
+            </div>
+            <div class="group-row primary">
+              <span class="star">★</span>
+              <div style="flex:1">
+                <div class="row-name">John Smith</div>
+                <div class="row-email">john.smith@example.com</div>
+              </div>
+              <span class="match-pct" style="background:var(--green-soft);color:var(--green)">Primary</span>
+            </div>
+            <div class="group-row">
+              <span style="width:14px"></span>
+              <div style="flex:1">
+                <div class="row-name">J. Smith</div>
+                <div class="row-email">john.smith@example.com</div>
+              </div>
+              <span class="match-pct" style="background:var(--green-soft);color:var(--green)">100%</span>
+            </div>
+          </div>
+          <button class="merge-btn">Merge 2 Groups → Continue</button>
+        </div>
+      </div>
+      <div class="floating-card fc-2">
+        <div class="fc-icon"><div class="fc-dot" style="background:var(--accent)"></div><span style="font-size:11px;color:var(--ink3)">Time Saved</span></div>
+        <div class="fc-num">4.2h</div>
+        <div class="fc-label">vs manual cleanup</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STATS BAR -->
+<div class="stats-bar">
+  <div class="stats-inner">
+    <div class="stat-item"><div class="stat-num">500+</div><div class="stat-label">Active Installs</div></div>
+    <div class="stat-item"><div class="stat-num">2M+</div><div class="stat-label">Records Merged</div></div>
+    <div class="stat-item"><div class="stat-num">99.9%</div><div class="stat-label">Accuracy Rate</div></div>
+    <div class="stat-item"><div class="stat-num">4.9★</div><div class="stat-label">AppExchange Rating</div></div>
+  </div>
+</div>
+
+<!-- HOW IT WORKS -->
+<section class="section" id="how-it-works">
+  <div class="section-inner">
+    <div style="text-align:center" class="reveal">
+      <div class="section-tag"><div class="dot"></div> Simple Process</div>
+      <h2 class="section-headline">From messy data to clean records<br>in 4 simple steps</h2>
+      <p class="section-sub center">No technical knowledge needed. If you can click a button, you can merge records.</p>
+    </div>
+    <div class="steps">
+      <div class="step-card reveal">
+        <div class="step-num">1</div>
+        <div class="step-title">Choose Your Object</div>
+        <div class="step-desc">Select Contacts, Leads, Accounts — or any Salesforce object. We'll do the rest.</div>
+      </div>
+      <div class="step-card reveal reveal-delay-1">
+        <div class="step-num">2</div>
+        <div class="step-title">Find Duplicates</div>
+        <div class="step-desc">AI instantly scans all records and groups similar ones together automatically.</div>
+      </div>
+      <div class="step-card reveal reveal-delay-2">
+        <div class="step-num">3</div>
+        <div class="step-title">Choose Primary</div>
+        <div class="step-desc">Pick which record to keep. We highlight the best candidate for you with a ★.</div>
+      </div>
+      <div class="step-card reveal reveal-delay-3">
+        <div class="step-num">4</div>
+        <div class="step-title">Merge &amp; Done</div>
+        <div class="step-desc">Click merge. All related data is moved to the primary record. Duplicates removed.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BEFORE AFTER -->
+<section class="section" style="background:var(--bg2);padding-top:0">
+  <div class="section-inner">
+    <div class="reveal" style="text-align:center">
+      <div class="section-tag"><div class="dot"></div> Real Impact</div>
+      <h2 class="section-headline">See the difference it makes</h2>
+    </div>
+    <div class="ba-grid">
+      <div class="ba-card before reveal">
+        <div class="ba-label">✕ Before Merge Engine</div>
+        <ul class="ba-list">
+          <li><div class="icon">✕</div>Sales team calls the same lead twice — awkward</li>
+          <li><div class="icon">✕</div>Duplicate contacts inflate your email list costs</li>
+          <li><div class="icon">✕</div>Revenue reports show inflated opportunity numbers</li>
+          <li><div class="icon">✕</div>Hours wasted manually finding and deleting records</li>
+          <li><div class="icon">✕</div>Customer history split across multiple records</li>
+          <li><div class="icon">✕</div>Compliance risk from stale, redundant data</li>
+        </ul>
+      </div>
+      <div class="ba-card after reveal reveal-delay-1">
+        <div class="ba-label">✓ After Merge Engine</div>
+        <ul class="ba-list">
+          <li><div class="icon">✓</div>One clean record per person, company, or lead</li>
+          <li><div class="icon">✓</div>Email costs drop — you only send once</li>
+          <li><div class="icon">✓</div>Accurate forecasts and reporting you can trust</li>
+          <li><div class="icon">✓</div>Cleanup takes minutes, not days</li>
+          <li><div class="icon">✓</div>Complete 360° view of every customer</li>
+          <li><div class="icon">✓</div>Clean data = compliance confidence</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURES -->
+<section class="section" id="features">
+  <div class="section-inner">
+    <div class="reveal">
+      <div class="section-tag"><div class="dot"></div> Features</div>
+      <h2 class="section-headline">Everything you need to<br>keep Salesforce clean</h2>
+      <p class="section-sub">Built specifically for Salesforce Admins and Operations teams who need results, not complexity.</p>
+    </div>
+    <div class="features-grid">
+      <div class="feature-card reveal">
+        <div class="feature-icon blue">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83"/></svg>
+        </div>
+        <h3>AI Smart Matching</h3>
+        <p>Our AI uses fuzzy logic to find near-matches that exact search would miss. "John Smith" and "J. Smith" at the same company — detected automatically.</p>
+        <div class="feature-tags">
+          <span class="feature-tag">Fuzzy Match</span>
+          <span class="feature-tag">Exact Match</span>
+          <span class="feature-tag">AI-Powered</span>
+        </div>
+      </div>
+      <div class="feature-card reveal reveal-delay-1">
+        <div class="feature-icon green">
+          <svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4M21 12a9 9 0 11-18 0 9 9 0 0118 0"/></svg>
+        </div>
+        <h3>Bulk Merge Groups</h3>
+        <p>Don't just merge one at a time. Review and approve multiple duplicate groups at once, then merge them all in a single click. Thousands of records, minutes not hours.</p>
+        <div class="feature-tags">
+          <span class="feature-tag">Multi-Group</span>
+          <span class="feature-tag">Bulk Processing</span>
+        </div>
+      </div>
+      <div class="feature-card reveal">
+        <div class="feature-icon amber">
+          <svg viewBox="0 0 24 24"><path d="M13 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V9z"/><polyline points="13 2 13 9 20 9"/></svg>
+        </div>
+        <h3>CSV Backup Before Every Merge</h3>
+        <p>Nervous about losing data? Export a full backup to Excel/CSV before any merge happens. One click safety net — always there, always free.</p>
+        <div class="feature-tags">
+          <span class="feature-tag">CSV Export</span>
+          <span class="feature-tag">Pre-Merge Backup</span>
+        </div>
+      </div>
+      <div class="feature-card reveal reveal-delay-1">
+        <div class="feature-icon red">
+          <svg viewBox="0 0 24 24"><path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+        </div>
+        <h3>Related Records Auto Re-Parented</h3>
+        <p>When you merge two Accounts, all their related Contacts, Opportunities, Cases, and more automatically move to the surviving record. Nothing is orphaned.</p>
+        <div class="feature-tags">
+          <span class="feature-tag">Child Records</span>
+          <span class="feature-tag">Re-Parenting</span>
+          <span class="feature-tag">Lookups</span>
+        </div>
+      </div>
+      <div class="feature-card wide reveal">
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:32px;align-items:center">
+          <div>
+            <div class="feature-icon blue">
+              <svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+            </div>
+            <h3>Custom Filter Builder</h3>
+            <p>Go beyond AI — build precise filters using any field, any operator. Filter by industry, region, record owner, date range, or any combination. The auto-generated SOQL shows exactly what's being searched.</p>
+            <div class="feature-tags">
+              <span class="feature-tag">SOQL Preview</span>
+              <span class="feature-tag">Fuzzy Toggle</span>
+              <span class="feature-tag">AND / OR Logic</span>
+              <span class="feature-tag">Email Domain Filter</span>
+            </div>
+          </div>
+          <div style="background:var(--bg);border:1px solid var(--border);border-radius:var(--radius-sm);padding:16px;font-size:13px">
+            <div style="font-weight:600;color:var(--ink3);margin-bottom:10px;font-size:12px;text-transform:uppercase;letter-spacing:0.5px">Generated SOQL Preview</div>
+            <div style="background:var(--ink);border-radius:var(--radius-sm);padding:14px;font-family:monospace;font-size:12px;color:#a5f3fc;line-height:1.7">
+              <span style="color:#c084fc">SELECT</span> Id, Name, Email,<br>
+              &nbsp;&nbsp;Phone, Account.Name<br>
+              <span style="color:#c084fc">FROM</span> <span style="color:#86efac">Contact</span><br>
+              <span style="color:#c084fc">WHERE</span> Email != null<br>
+              &nbsp;&nbsp;<span style="color:#fbbf24">AND</span> AccountId = '...'<br>
+              <span style="color:#c084fc">LIMIT</span> <span style="color:#f9a8d4">5000</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- AI SECTION -->
+<section class="ai-section" id="ai">
+  <div class="ai-bg-grid"></div>
+  <div class="ai-inner">
+    <div class="reveal">
+      <div class="ai-tag">✦ AI-Powered</div>
+      <h2 class="ai-headline">AI finds duplicates<br>you'd never find<br>manually</h2>
+      <p class="ai-sub">Traditional duplicate rules only catch exact matches. Our AI understands that "Microsoft Corp", "Microsoft Corporation", and "MSFT" are the same company.</p>
+      <div class="ai-chips">
+        <div class="ai-chip"><div class="chip-dot"></div>Jaro-Winkler similarity</div>
+        <div class="ai-chip"><div class="chip-dot" style="background:#34d399"></div>Token overlap scoring</div>
+        <div class="ai-chip"><div class="chip-dot" style="background:#f9a8d4"></div>Phone number normalization</div>
+        <div class="ai-chip"><div class="chip-dot" style="background:#fbbf24"></div>Email domain grouping</div>
+      </div>
+      <a href="#get-started" class="btn-primary" style="display:inline-flex">Try AI Search Free →</a>
+    </div>
+    <div class="ai-visual reveal reveal-delay-1">
+      <div style="font-size:12px;font-weight:600;color:rgba(255,255,255,0.5);text-transform:uppercase;letter-spacing:0.8px;margin-bottom:14px">Select Fields to Compare</div>
+      <div class="ai-field-grid">
+        <div class="ai-field-chip selected">
+          <div>Name <span style="font-size:10px;opacity:0.7">STRING</span></div>
+          <div class="ai-mode-row">
+            <button class="ai-mode-btn active">Fuzzy</button>
+            <button class="ai-mode-btn">Exact</button>
+          </div>
+        </div>
+        <div class="ai-field-chip selected">
+          <div>Email <span style="font-size:10px;opacity:0.7">EMAIL</span></div>
+          <div class="ai-mode-row">
+            <button class="ai-mode-btn">Fuzzy</button>
+            <button class="ai-mode-btn active">Exact</button>
+          </div>
+        </div>
+        <div class="ai-field-chip unselected">Phone <span style="font-size:10px">PHONE</span></div>
+        <div class="ai-field-chip unselected">Company <span style="font-size:10px">STRING</span></div>
+      </div>
+      <div class="ai-result-preview" style="margin-top:20px">
+        <div style="padding:10px 14px;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.6px;color:rgba(255,255,255,0.35);border-bottom:1px solid rgba(255,255,255,0.06)">AI Duplicate Groups Found</div>
+        <div class="ai-result-row"><div class="ai-match-pct">97%</div><div style="flex:1">John Smith / J. Smith / John S.</div><div class="ai-match-field">Name · Fuzzy</div></div>
+        <div class="ai-result-row"><div class="ai-match-pct">100%</div><div style="flex:1">sarah@acme.com (3 contacts)</div><div class="ai-match-field">Email · Exact</div></div>
+        <div class="ai-result-row"><div class="ai-match-pct">91%</div><div style="flex:1">Acme Corp / Acme Corporation</div><div class="ai-match-field">Name · Fuzzy</div></div>
+        <div class="ai-result-row"><div class="ai-match-pct">88%</div><div style="flex:1">Global Tech / GlobalTech Inc</div><div class="ai-match-field">Name · Fuzzy</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SECURITY -->
+<section class="section" id="security">
+  <div class="section-inner">
+    <div style="text-align:center" class="reveal">
+      <div class="section-tag"><div class="dot" style="background:#059669"></div><span style="color:var(--green)">Security First</span></div>
+      <h2 class="section-headline">Your data never leaves<br>Salesforce</h2>
+      <p class="section-sub center">Merge Engine is a 100% native Salesforce managed package. We never send your data to external servers. Your IT team will love it.</p>
+    </div>
+    <div class="security-grid">
+      <div class="security-card s1 reveal">
+        <h4><div class="sec-icon" style="background:var(--accent-soft)"><svg viewBox="0 0 24 24" stroke="var(--accent)"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>100% Native Salesforce</h4>
+        <p>No external servers, no third-party storage, no data leaving your org. Everything runs inside your Salesforce environment using Apex code.</p>
+      </div>
+      <div class="security-card s2 reveal reveal-delay-1">
+        <h4><div class="sec-icon" style="background:var(--green-soft)"><svg viewBox="0 0 24 24" stroke="var(--green)"><path d="M20 7H4a2 2 0 00-2 2v10a2 2 0 002 2h16a2 2 0 002-2V9a2 2 0 00-2-2z"/><path d="M16 21V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v16"/></svg></div>Managed Package Security</h4>
+        <p>Installed through AppExchange as a managed package, reviewed and approved by Salesforce's security team before publication.</p>
+      </div>
+      <div class="security-card s3 reveal reveal-delay-2">
+        <h4><div class="sec-icon" style="background:var(--amber-soft)"><svg viewBox="0 0 24 24" stroke="var(--amber)"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg></div>CRUD &amp; FLS Respected</h4>
+        <p>Every action respects your Salesforce profiles, permission sets, and field-level security. Users can only see and merge what they're permitted to.</p>
+      </div>
+      <div class="security-card s4 reveal">
+        <h4><div class="sec-icon" style="background:#f5f3ff"><svg viewBox="0 0 24 24" stroke="#7c3aed"><path d="M9 12l2 2 4-4"/></svg></div>Confirmation Before Merge</h4>
+        <p>We never auto-merge. You see a clear confirmation dialog showing exactly what will be deleted before anything happens. No surprises.</p>
+      </div>
+      <div class="security-card s5 reveal reveal-delay-1">
+        <h4><div class="sec-icon" style="background:#fdf2f8"><svg viewBox="0 0 24 24" stroke="#be185d"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><path d="M14 2v6h6M16 13H8M16 17H8M10 9H8"/></svg></div>Pre-Merge CSV Export</h4>
+        <p>Always export a backup before merging. If something looks wrong, restore from your CSV. Your data safety is our top priority.</p>
+      </div>
+      <div class="security-card s6 reveal reveal-delay-2">
+        <h4><div class="sec-icon" style="background:var(--red-soft)"><svg viewBox="0 0 24 24" stroke="var(--red)"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg></div>Audit Trail Preserved</h4>
+        <p>All merge actions are performed via standard Salesforce APIs. Salesforce's own Audit Trail records every merge, giving your compliance team full visibility.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="testimonials">
+  <div class="section-inner">
+    <div style="text-align:center" class="reveal">
+      <div class="section-tag"><div class="dot"></div> Customer Stories</div>
+      <h2 class="section-headline">Real admins. Real results.</h2>
+    </div>
+    <div class="testi-grid">
+      <div class="testi-card reveal">
+        <div class="testi-stars">★★★★★</div>
+        <div class="testi-quote">"</div>
+        <p class="testi-text">We had 12,000 duplicate contacts built up over 5 years. Merge Engine cleaned them all up in one afternoon. The AI matching is genuinely impressive — it caught things we never would have found manually.</p>
+        <div class="testi-author">
+          <div class="testi-avatar" style="background:var(--accent-soft);color:var(--accent)">SK</div>
+          <div><div class="testi-name">Sarah Kim</div><div class="testi-role">Salesforce Admin · FinTech Company</div></div>
+        </div>
+      </div>
+      <div class="testi-card reveal reveal-delay-1">
+        <div class="testi-stars">★★★★★</div>
+        <div class="testi-quote">"</div>
+        <p class="testi-text">The email domain grouping feature alone saved us. We found 800 contacts from the same company entered under slightly different emails. The bulk merge was incredible — one click, done.</p>
+        <div class="testi-author">
+          <div class="testi-avatar" style="background:var(--green-soft);color:var(--green)">MR</div>
+          <div><div class="testi-name">Marcus Rodriguez</div><div class="testi-role">CRM Manager · Logistics Corp</div></div>
+        </div>
+      </div>
+      <div class="testi-card reveal reveal-delay-2">
+        <div class="testi-stars">★★★★★</div>
+        <div class="testi-quote">"</div>
+        <p class="testi-text">Our sales team was calling the same leads twice every week. Embarrassing. Merge Engine fixed it in a day. The CSV backup feature gave our compliance team the confidence to let us proceed.</p>
+        <div class="testi-author">
+          <div class="testi-avatar" style="background:var(--amber-soft);color:var(--amber)">TL</div>
+          <div><div class="testi-name">Theresa Liu</div><div class="testi-role">VP Sales Ops · SaaS Startup</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- APPEXCHANGE / GET STARTED -->
+<section class="price-section" id="get-started">
+  <div class="price-inner">
+    <div class="reveal" style="text-align:center">
+      <div class="section-tag"><div class="dot"></div> AppExchange</div>
+      <h2 class="section-headline">Start cleaning your<br>Salesforce data today</h2>
+      <p class="section-sub center">Available as a managed package on Salesforce AppExchange. Install in minutes, no credit card required to try.</p>
+    </div>
+    <div class="appex-card reveal">
+      <div class="appex-badge">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+        Available on Salesforce AppExchange
+      </div>
+      <div class="appex-title">Merge Engine</div>
+      <div class="appex-sub">The most intelligent duplicate remover for Salesforce</div>
+      <div class="appex-features">
+        <div class="appex-feat">AI Fuzzy Matching</div>
+        <div class="appex-feat">Bulk Merge Groups</div>
+        <div class="appex-feat">All Salesforce Objects</div>
+        <div class="appex-feat">Pre-Merge CSV Backup</div>
+        <div class="appex-feat">Related Record Re-Parenting</div>
+        <div class="appex-feat">Custom Filter Builder</div>
+        <div class="appex-feat">100% Native Salesforce</div>
+        <div class="appex-feat">Email Domain Grouping</div>
+      </div>
+      <div style="display:flex;gap:14px;justify-content:center;flex-wrap:wrap">
+        <a href="https://appexchange.salesforce.com" target="_blank" class="btn-primary" style="font-size:17px;padding:16px 36px">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+          Get it on AppExchange
+        </a>
+        <a href="pages/contact.html" class="btn-secondary" style="font-size:17px;padding:16px 36px">Watch Demo</a>
+      </div>
+      <div style="margin-top:20px;font-size:13px;color:var(--ink3)">✓ Free trial available &nbsp;·&nbsp; ✓ No credit card required &nbsp;·&nbsp; ✓ 5-minute setup</div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq-section" id="faq">
+  <div style="text-align:center;max-width:640px;margin:0 auto 0" class="reveal">
+    <div class="section-tag"><div class="dot"></div> FAQ</div>
+    <h2 class="section-headline">Common questions</h2>
+    <p class="section-sub center">No jargon, straight answers.</p>
+  </div>
+  <div class="faq-grid">
+    <div class="faq-item reveal">
+      <div class="faq-q" onclick="toggleFaq(this)">Will merging delete data I want to keep?<div class="faq-toggle">+</div></div>
+      <div class="faq-a"><p>No. You always choose which record is the "primary" — the one that survives. You can also export a CSV backup before anything is deleted, so you always have a safety net. We show you a full preview of exactly what will be merged before you confirm.</p></div>
+    </div>
+    <div class="faq-item reveal reveal-delay-1">
+      <div class="faq-q" onclick="toggleFaq(this)">Does it work with custom Salesforce objects?<div class="faq-toggle">+</div></div>
+      <div class="faq-a"><p>Yes. Merge Engine works with any Salesforce object — standard objects like Contact, Lead, and Account, as well as any custom objects you've created. Standard objects use the native Salesforce merge API. Other objects use a smart re-parent-and-delete method.</p></div>
+    </div>
+    <div class="faq-item reveal">
+      <div class="faq-q" onclick="toggleFaq(this)">What happens to related records when I merge?<div class="faq-toggle">+</div></div>
+      <div class="faq-a"><p>All related records (Opportunities, Cases, Activities, custom child records) are automatically moved to the primary record before deletion. Nothing is orphaned or lost.</p></div>
+    </div>
+    <div class="faq-item reveal reveal-delay-1">
+      <div class="faq-q" onclick="toggleFaq(this)">Is my data sent to any external server?<div class="faq-toggle">+</div></div>
+      <div class="faq-a"><p>Absolutely not. Merge Engine is 100% native Salesforce — it runs entirely inside your Salesforce org using Apex code. No data is ever sent to external servers.</p></div>
+    </div>
+    <div class="faq-item reveal">
+      <div class="faq-q" onclick="toggleFaq(this)">How long does it take to set up?<div class="faq-toggle">+</div></div>
+      <div class="faq-a"><p>About 5 minutes. Install the managed package from AppExchange, assign the necessary permissions, and you're ready to start merging. No code, no configuration files, no consultants required.</p></div>
+    </div>
+    <div class="faq-item reveal reveal-delay-1">
+      <div class="faq-q" onclick="toggleFaq(this)">What if I accidentally merge the wrong records?<div class="faq-toggle">+</div></div>
+      <div class="faq-a"><p>We strongly recommend using the CSV export before every merge session — this creates a backup you can reference. Once records are merged in Salesforce, they cannot be automatically undone. However, with your CSV backup, your admin can manually restore records if needed.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="cta-section">
+  <div class="cta-inner">
+    <h2>Your cleanest Salesforce org<br>is one install away</h2>
+    <p>Join 500+ Salesforce teams who've already eliminated their duplicate records problem for good.</p>
+    <a href="https://appexchange.salesforce.com" target="_blank" class="btn-white">Get Merge Engine Free on AppExchange →</a>
+    <div style="margin-top:16px;font-size:13px;color:rgba(255,255,255,0.55)">No credit card · 5-minute setup · 100% Salesforce Native</div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="footer-logo-text">Merge<span>Engine</span></div>
+        <p>The most intelligent duplicate removal tool built natively for Salesforce. Trusted by 500+ admins worldwide.</p>
+      </div>
+      <div class="footer-col">
+        <h5>Product</h5>
+        <a href="#features">Features</a>
+        <a href="#how-it-works">How it Works</a>
+        <a href="#ai">AI Matching</a>
+        <a href="#security">Security</a>
+      </div>
+      <div class="footer-col">
+        <h5>Resources</h5>
+        <a href="pages/documentation.html">Documentation</a>
+        <a href="pages/documentation.html#installation">Installation Guide</a>
+        <a href="pages/documentation.html#release-notes">Release Notes</a>
+        <a href="https://appexchange.salesforce.com" target="_blank">AppExchange Listing</a>
+      </div>
+      <div class="footer-col">
+        <h5>Support</h5>
+        <a href="pages/contact.html">Contact Support</a>
+        <a href="#faq">FAQ</a>
+        <a href="pages/privacy.html">Privacy Policy</a>
+        <a href="pages/terms.html">Terms of Service</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div style="font-size:13px;color:rgba(255,255,255,0.35)">© 2025 Merge Engine. Available on Salesforce AppExchange.</div>
+      <div style="display:flex;align-items:center;gap:6px;font-size:13px;color:rgba(255,255,255,0.35)">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        Built natively for Salesforce · No external data storage
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>

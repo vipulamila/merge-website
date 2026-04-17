@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Terms of Service — Merge Engine</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+
+<div id="loader">
+  <div class="loader-logo">Merge<span>Engine</span></div>
+  <div class="loader-track"><div class="loader-fill" id="loaderFill"></div></div>
+  <div class="loader-msg" id="loaderMsg">Loading…</div>
+</div>
+
+<nav id="mainNav">
+  <div class="nav-inner">
+    <a href="../index.html" class="nav-logo">
+      <div class="logo-icon">
+        <svg viewBox="0 0 24 24"><path d="M8 6H4v4M4 6l5 5M16 6h4v4M20 6l-5 5M8 18H4v-4M4 18l5-5M16 18h4v-4M20 18l-5-5"/></svg>
+      </div>
+      Merge<span style="color:var(--accent)">Engine</span>
+    </a>
+    <div class="nav-links">
+      <a href="../index.html#how-it-works">How it Works</a>
+      <a href="../index.html#features">Features</a>
+      <a href="documentation.html">Docs</a>
+      <a href="contact.html">Contact</a>
+      <a href="../index.html#get-started" class="nav-cta">Get Started Free →</a>
+    </div>
+    <button class="nav-hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="../index.html" onclick="closeMobileMenu()">Home</a>
+  <a href="documentation.html" onclick="closeMobileMenu()">Docs</a>
+  <a href="contact.html" onclick="closeMobileMenu()">Contact</a>
+</div>
+
+<div class="legal-content">
+  <h1>Terms of Service</h1>
+  <div class="last-updated">Last updated: April 2025</div>
+
+  <p>These Terms of Service ("Terms") govern your use of Merge Engine, a Salesforce AppExchange application ("the App"), and this website. By installing or using Merge Engine, you agree to these Terms.</p>
+
+  <h2>1. Acceptance of Terms</h2>
+  <p>By installing Merge Engine from Salesforce AppExchange or using our website, you agree to be bound by these Terms. If you are accepting on behalf of a company, you represent that you have authority to do so.</p>
+
+  <h2>2. The App and License</h2>
+  <p>Merge Engine grants you a limited, non-exclusive, non-transferable license to use the App within your Salesforce org, subject to any subscription or licensing terms as detailed on the AppExchange listing. You may not sublicense, sell, resell, transfer, assign, or otherwise commercialize the App.</p>
+
+  <h2>3. Your Data and Responsibility</h2>
+  <p>You are solely responsible for all data merging, deletion, and modification actions performed using Merge Engine. Specifically:</p>
+  <ul>
+    <li>Merge Engine performs actions on your Salesforce data at your direction</li>
+    <li>Record merges and deletions may be irreversible (Salesforce platform limitation)</li>
+    <li>We strongly recommend exporting a CSV backup before every merge session</li>
+    <li>You are responsible for ensuring you have appropriate backups before using the App</li>
+    <li>We are not liable for any data loss resulting from use of the App</li>
+  </ul>
+
+  <h2>4. Acceptable Use</h2>
+  <p>You agree not to:</p>
+  <ul>
+    <li>Use the App to violate any applicable law or regulation</li>
+    <li>Attempt to reverse engineer or decompile the managed package</li>
+    <li>Use the App in any way that could damage or overload Salesforce infrastructure</li>
+    <li>Circumvent any Salesforce governor limits or security controls</li>
+  </ul>
+
+  <h2>5. AppExchange and Salesforce Terms</h2>
+  <p>Your use of Merge Engine is also subject to Salesforce's AppExchange Terms of Use and your Salesforce subscription agreement. In the event of any conflict, Salesforce's terms take precedence with respect to the Salesforce platform.</p>
+
+  <h2>6. Disclaimers</h2>
+  <p>THE APP IS PROVIDED "AS IS" WITHOUT WARRANTY OF ANY KIND. WE DISCLAIM ALL WARRANTIES, EXPRESS OR IMPLIED, INCLUDING WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, AND NON-INFRINGEMENT. WE DO NOT WARRANT THAT THE APP WILL BE ERROR-FREE OR UNINTERRUPTED.</p>
+
+  <h2>7. Limitation of Liability</h2>
+  <p>TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, IN NO EVENT SHALL MERGE ENGINE BE LIABLE FOR ANY INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL, OR PUNITIVE DAMAGES, INCLUDING LOSS OF PROFITS, DATA, OR GOODWILL, ARISING OUT OF OR IN CONNECTION WITH YOUR USE OF THE APP.</p>
+
+  <h2>8. Changes to Terms</h2>
+  <p>We may modify these Terms at any time. We will notify users of material changes via the AppExchange listing or email. Continued use of the App after changes constitutes acceptance of the revised Terms.</p>
+
+  <h2>9. Contact</h2>
+  <p>For questions about these Terms, please contact us at <strong>legal@mergeengine.io</strong> or via our <a href="contact.html" style="color:var(--accent)">contact form</a>.</p>
+
+  <div style="margin-top:48px;padding-top:32px;border-top:1px solid var(--border);display:flex;gap:16px;flex-wrap:wrap">
+    <a href="privacy.html" style="color:var(--accent);font-size:14px;font-weight:500">Privacy Policy →</a>
+    <a href="contact.html" style="color:var(--accent);font-size:14px;font-weight:500">Contact Us →</a>
+    <a href="../index.html" style="color:var(--ink3);font-size:14px">← Back to Home</a>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="footer-logo-text">Merge<span>Engine</span></div>
+        <p>The most intelligent duplicate removal tool built natively for Salesforce.</p>
+      </div>
+      <div class="footer-col">
+        <h5>Product</h5>
+        <a href="../index.html#features">Features</a>
+        <a href="../index.html#how-it-works">How it Works</a>
+        <a href="../index.html#security">Security</a>
+      </div>
+      <div class="footer-col">
+        <h5>Resources</h5>
+        <a href="documentation.html">Documentation</a>
+        <a href="https://appexchange.salesforce.com" target="_blank">AppExchange</a>
+      </div>
+      <div class="footer-col">
+        <h5>Legal</h5>
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="terms.html">Terms of Service</a>
+        <a href="contact.html">Contact</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div style="font-size:13px;color:rgba(255,255,255,0.35)">© 2025 Merge Engine.</div>
+    </div>
+  </div>
+</footer>
+
+<script src="../js/main.js"></script>
+</body>
+</html>
