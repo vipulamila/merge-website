@@ -134,8 +134,16 @@ function initContactForm() {
   });
 
   form.addEventListener('submit', function (e) {
-    e.preventDefault();
-    if (!validateAll()) return;
+    if (!validateAll()) {
+      e.preventDefault();
+      return;
+    }
+
+    // Populate the hidden 'name' field for Salesforce
+    const fname = document.getElementById('firstName').value.trim();
+    const lname = document.getElementById('lastName').value.trim();
+    const nameField = document.getElementById('name');
+    if (nameField) nameField.value = fname + ' ' + lname;
 
     const btn = form.querySelector('.form-submit');
     const spinner = btn.querySelector('.btn-spinner');
@@ -145,7 +153,8 @@ function initContactForm() {
     if (spinner) spinner.style.display = 'inline-block';
     if (btnText) btnText.textContent = 'Sending…';
 
-    // Simulate form submission (replace with real endpoint)
+    // Since we are targeting a hidden iframe, the page won't reload.
+    // We show the success banner after a short delay to simulate "submission"
     setTimeout(() => {
       btn.disabled = false;
       if (spinner) spinner.style.display = 'none';
@@ -157,7 +166,7 @@ function initContactForm() {
         form.reset();
         success.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
       }
-    }, 1600);
+    }, 1200);
   });
 }
 

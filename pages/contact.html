@@ -121,7 +121,11 @@
     <h3>Send us a message</h3>
     <p>Fill in the details below and we'll get back to you as soon as possible.</p>
 
-    <form id="contactForm" novalidate>
+    <form id="contactForm" action="https://webto.salesforce.com/servlet/servlet.WebToCase?encoding=UTF-8" method="POST" target="sf_frame" novalidate>
+      <input type="hidden" name="orgid" value="00DgK00000LUlGj">
+      <input type="hidden" name="retURL" value="https://vipulamila.github.io/merge-website/pages/contact.html?success=true">
+      <input type="hidden" id="name" name="name">
+
       <div class="form-row">
         <div class="form-group">
           <label for="firstName">First Name <span style="color:var(--red)">*</span></label>
@@ -170,7 +174,7 @@
 
       <div class="form-group">
         <label for="message">Message <span style="color:var(--red)">*</span></label>
-        <textarea id="message" name="message" placeholder="Describe your question or issue in as much detail as possible…"></textarea>
+        <textarea id="message" name="description" placeholder="Describe your question or issue in as much detail as possible…"></textarea>
         <span class="field-error" id="messageError"></span>
       </div>
 
@@ -188,6 +192,8 @@
         </span>
       </button>
     </form>
+
+    <iframe name="sf_frame" id="sf_frame" style="display:none"></iframe>
 
     <div class="success-banner" id="successBanner">
       <h4>✓ Message sent successfully!</h4>
