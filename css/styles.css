@@ -381,7 +381,9 @@ footer{background:var(--bg);color:var(--ink3);padding:56px 24px 32px;border-top:
   .section{padding:64px 20px}
   .hero{padding:48px 20px 0}
   .hero-inner{grid-template-columns:1fr;gap:40px}
-  .hero-visual{display:none}
+  .hero-visual{display:block; margin-top:10px; margin-bottom:20px}
+  .fc-1{right:-5px; top:-10px}
+  .fc-2{left:-5px; bottom:30px}
   .stats-inner{grid-template-columns:repeat(2,1fr)}
   .steps{grid-template-columns:repeat(2,1fr);gap:32px}
   .steps::before{display:none}
