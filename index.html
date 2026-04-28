@@ -98,81 +98,7 @@
         </div>
         <div class="mockup-title">Merge Engine — Salesforce</div>
       </div>
-      <div class="hero-mockup" style="border-radius:0 0 var(--radius-lg) var(--radius-lg);border-top:none">
-        <div class="mockup-body">
-          <div class="mockup-header">
-            <div class="mockup-icon">
-              <svg viewBox="0 0 24 24"><path d="M8 6H4v4M4 6l5 5M16 6h4v4M20 6l-5 5M8 18H4v-4M4 18l5-5M16 18h4v-4M20 18l-5-5" stroke="#fff" stroke-width="2" stroke-linecap="round" fill="none"/></svg>
-            </div>
-            <div class="mockup-text">
-              <h4>Merge Engine</h4>
-              <p>Deduplicate &amp; consolidate Salesforce records</p>
-            </div>
-          </div>
-          <div class="mockup-modes">
-            <div class="mockup-mode">Manual Search</div>
-            <div class="mockup-mode active ai">
-              <span>AI Search</span>
-              <span class="ai-badge">NEW</span>
-            </div>
-          </div>
-          <div class="mockup-group">
-            <div class="group-header">
-              <div class="group-badge">Fuzzy: Name</div>
-              <span style="flex:1">Acme Corp · ~94% match</span>
-              <span class="group-count">3 records</span>
-            </div>
-            <div class="group-row primary">
-              <span class="star">★</span>
-              <div style="flex:1">
-                <div class="row-name">Acme Corporation</div>
-                <div class="row-email">acme@acmecorp.com</div>
-              </div>
-              <span class="match-pct">Primary</span>
-            </div>
-            <div class="group-row">
-              <span style="width:14px"></span>
-              <div style="flex:1">
-                <div class="row-name">Acme Corp.</div>
-                <div class="row-email">info@acmecorp.com</div>
-              </div>
-              <span class="match-pct">97%</span>
-            </div>
-            <div class="group-row">
-              <span style="width:14px"></span>
-              <div style="flex:1">
-                <div class="row-name">ACME Corp</div>
-                <div class="row-email">sales@acme.com</div>
-              </div>
-              <span class="match-pct">91%</span>
-            </div>
-          </div>
-          <div class="mockup-group">
-            <div class="group-header">
-              <div class="group-badge" style="background:#f0fdf4;color:#166534">Exact: Email</div>
-              <span style="flex:1">john.smith@example.com</span>
-              <span class="group-count">2 records</span>
-            </div>
-            <div class="group-row primary">
-              <span class="star">★</span>
-              <div style="flex:1">
-                <div class="row-name">John Smith</div>
-                <div class="row-email">john.smith@example.com</div>
-              </div>
-              <span class="match-pct" style="background:var(--green-soft);color:var(--green)">Primary</span>
-            </div>
-            <div class="group-row">
-              <span style="width:14px"></span>
-              <div style="flex:1">
-                <div class="row-name">J. Smith</div>
-                <div class="row-email">john.smith@example.com</div>
-              </div>
-              <span class="match-pct" style="background:var(--green-soft);color:var(--green)">100%</span>
-            </div>
-          </div>
-          <button class="merge-btn">Merge 2 Groups → Continue</button>
-        </div>
-      </div>
+      <img src="images/app-hero.png" alt="Merge Engine Premium Dashboard" class="hero-mockup-img" style="width:100%; height:auto; border-radius:0 0 var(--radius-lg) var(--radius-lg); box-shadow:var(--shadow-lg); animation:floatUp 0.8s ease 0.3s both; display:block; border:1px solid var(--border); border-top:none; background:var(--ink);">
       <div class="floating-card fc-2">
         <div class="fc-icon"><div class="fc-dot" style="background:var(--accent)"></div><span style="font-size:11px;color:var(--ink3)">Time Saved</span></div>
         <div class="fc-num">4.2h</div>
@@ -346,6 +272,67 @@
   </div>
 </section>
 
+<!-- PRODUCT TOUR -->
+<section class="product-tour" id="tour">
+  <div class="section-inner">
+    <div style="text-align:center" class="reveal">
+      <div class="section-tag"><div class="dot"></div> Inside the Engine</div>
+      <h2 class="section-headline">Built for scale. Designed for speed.</h2>
+      <p class="section-sub center">Experience a professional-grade interface that makes complex data operations feel effortless.</p>
+    </div>
+
+    <div class="tour-grid">
+      <!-- Image 1: AI Similarity Filter -->
+      <div class="tour-card reveal">
+        <div class="tour-image-wrapper">
+          <img src="images/ai-fuzzy-matching.png" alt="AI Similarity Filter" class="tour-img">
+          <div class="tour-glass-overlay"></div>
+        </div>
+        <div class="tour-content">
+          <h3>AI-Powered Fuzzy Matching</h3>
+          <p>Smarter matching. Cleaner data. Confident merges. Our AI understands nuances, typos, and variations to find duplicates you'd normally miss.</p>
+        </div>
+      </div>
+
+      <!-- Image 2: Native Salesforce Setup -->
+      <div class="tour-card reveal reveal-delay-1">
+        <div class="tour-image-wrapper">
+          <img src="images/salesforce-native-ui.png" alt="Native Salesforce Integration" class="tour-img">
+          <div class="tour-glass-overlay"></div>
+        </div>
+        <div class="tour-content">
+          <h3>100% Native Salesforce UI</h3>
+          <p>Operates seamlessly within your existing Salesforce environment. Configure matching rules using an intuitive, Einstein-powered interface.</p>
+        </div>
+      </div>
+
+      <!-- Image 3: Batch Processing -->
+      <div class="tour-card reveal">
+        <div class="tour-image-wrapper">
+          <img src="images/batch-processing.png" alt="Batch Processing" class="tour-img">
+          <div class="tour-glass-overlay"></div>
+        </div>
+        <div class="tour-content">
+          <h3>High-Volume Batch Processing</h3>
+          <p>Process thousands of records with ease. Stay productive while we work securely in the background. No more waiting for manual merges.</p>
+        </div>
+      </div>
+
+      <!-- Image 4: Intelligent Re-parenting -->
+      <div class="tour-card reveal reveal-delay-1">
+        <div class="tour-image-wrapper">
+          <img src="images/intelligent-reparenting.png" alt="Intelligent Re-parenting" class="tour-img">
+          <div class="tour-glass-overlay"></div>
+        </div>
+        <div class="tour-content">
+          <h3>Standard &amp; Custom Re-parenting</h3>
+          <p>Merge with intelligence. Re-parent with precision. Keep your data model clean without losing any critical related historical records.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- AI SECTION -->
 <section class="ai-section" id="ai">
   <div class="ai-bg-grid"></div>
@@ -443,7 +430,7 @@
         <div class="testi-quote">"</div>
         <p class="testi-text">We had 12,000 duplicate contacts built up over 5 years. Merge Engine cleaned them all up in one afternoon. The AI matching is genuinely impressive — it caught things we never would have found manually.</p>
         <div class="testi-author">
-          <div class="testi-avatar" style="background:var(--accent-soft);color:var(--accent)">SK</div>
+          <img src="images/testimonial_avatar.png" alt="Sarah Kim" class="testi-avatar" style="object-fit:cover;">
           <div><div class="testi-name">Sarah Kim</div><div class="testi-role">Salesforce Admin · FinTech Company</div></div>
         </div>
       </div>
@@ -452,7 +439,7 @@
         <div class="testi-quote">"</div>
         <p class="testi-text">The email domain grouping feature alone saved us. We found 800 contacts from the same company entered under slightly different emails. The bulk merge was incredible — one click, done.</p>
         <div class="testi-author">
-          <div class="testi-avatar" style="background:var(--green-soft);color:var(--green)">MR</div>
+          <img src="images/testimonial_avatar.png" alt="Marcus Rodriguez" class="testi-avatar" style="object-fit:cover; filter:hue-rotate(45deg);">
           <div><div class="testi-name">Marcus Rodriguez</div><div class="testi-role">CRM Manager · Logistics Corp</div></div>
         </div>
       </div>
@@ -461,7 +448,7 @@
         <div class="testi-quote">"</div>
         <p class="testi-text">Our sales team was calling the same leads twice every week. Embarrassing. Merge Engine fixed it in a day. The CSV backup feature gave our compliance team the confidence to let us proceed.</p>
         <div class="testi-author">
-          <div class="testi-avatar" style="background:var(--amber-soft);color:var(--amber)">TL</div>
+          <img src="images/testimonial_avatar.png" alt="Theresa Liu" class="testi-avatar" style="object-fit:cover; filter:hue-rotate(90deg);">
           <div><div class="testi-name">Theresa Liu</div><div class="testi-role">VP Sales Ops · SaaS Startup</div></div>
         </div>
       </div>
@@ -478,6 +465,7 @@
       <p class="section-sub center">Available as a managed package on Salesforce AppExchange. Install in minutes, no credit card required to try.</p>
     </div>
     <div class="appex-card reveal">
+      <img src="images/appexchange_cta.png" alt="Salesforce AppExchange 3D Icon" style="width:320px;height:auto;margin:0 auto 24px;display:block;border-radius:24px;box-shadow:var(--shadow-lg);">
       <div class="appex-badge">
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
         Available on Salesforce AppExchange
