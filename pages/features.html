@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Merge Engine Features — The Ultimate Salesforce Data Cleaner</title>
+<meta name="description" content="Discover every detail of Merge Engine: AI fuzzy matching, field cherry-picking, robust SOQL filtering, and enterprise role-based security.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/styles.css">
+<style>
+  .features-hero {
+    padding: 180px 24px 80px;
+    background: var(--bg);
+    text-align: center;
+  }
+  .features-hero-title {
+    font-family: var(--font-display);
+    font-weight: 800;
+    font-size: 56px;
+    letter-spacing: -0.04em;
+    color: var(--ink);
+    margin-bottom: 24px;
+    line-height: 1.1;
+  }
+  .features-hero-sub {
+    font-size: 20px;
+    color: var(--ink3);
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.6;
+  }
+  .feature-block {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 64px;
+    align-items: center;
+    padding: 100px 24px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  .feature-block.reverse {
+    direction: rtl;
+  }
+  .feature-block.reverse > * {
+    direction: ltr;
+  }
+  .fb-content {
+    max-width: 500px;
+  }
+  .fb-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--accent-soft);
+    color: var(--accent);
+    padding: 6px 14px;
+    border-radius: 100px;
+    font-size: 13px;
+    font-weight: 600;
+    margin-bottom: 20px;
+  }
+  .fb-title {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 40px;
+    color: var(--ink);
+    line-height: 1.1;
+    margin-bottom: 24px;
+    letter-spacing: -0.03em;
+  }
+  .fb-desc {
+    font-size: 17px;
+    color: var(--ink3);
+    line-height: 1.7;
+    margin-bottom: 32px;
+  }
+  .fb-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  .fb-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    margin-bottom: 16px;
+    font-size: 16px;
+    color: var(--ink2);
+    line-height: 1.5;
+  }
+  .fb-list .icon {
+    flex-shrink: 0;
+    width: 24px;
+    height: 24px;
+    background: var(--green-soft);
+    color: var(--green);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    font-weight: bold;
+    margin-top: 2px;
+  }
+  .fb-visual {
+    position: relative;
+    border-radius: 24px;
+    overflow: hidden;
+    box-shadow: var(--shadow-xl);
+    border: 1px solid var(--border);
+    background: var(--white);
+    transform: perspective(1000px) rotateY(-5deg) translateY(0);
+    transition: transform 0.5s cubic-bezier(0.2, 0.8, 0.2, 1);
+  }
+  .fb-visual:hover {
+    transform: perspective(1000px) rotateY(0deg) translateY(-10px);
+  }
+  .feature-block.reverse .fb-visual {
+    transform: perspective(1000px) rotateY(5deg) translateY(0);
+  }
+  .feature-block.reverse .fb-visual:hover {
+    transform: perspective(1000px) rotateY(0deg) translateY(-10px);
+  }
+  .fb-visual img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+  
+  @media (max-width: 900px) {
+    .feature-block, .feature-block.reverse {
+      grid-template-columns: 1fr;
+      direction: ltr;
+      gap: 40px;
+      padding: 60px 24px;
+    }
+    .features-hero-title { font-size: 42px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="mainNav">
+  <div class="nav-inner">
+    <a href="../index.html" class="nav-logo">
+      <div class="logo-icon">
+        <svg viewBox="0 0 24 24"><path d="M8 6H4v4M4 6l5 5M16 6h4v4M20 6l-5 5M8 18H4v-4M4 18l5-5M16 18h4v-4M20 18l-5-5"/></svg>
+      </div>
+      Merge<span style="color:var(--accent)">Engine</span>
+    </a>
+    <div class="nav-links">
+      <a href="../index.html#how-it-works">How it Works</a>
+      <a href="features.html" style="color:var(--ink);font-weight:600">Features</a>
+      <a href="../index.html#security">Security</a>
+      <a href="documentation.html">Docs</a>
+      <a href="contact.html">Contact</a>
+      <a href="../index.html#get-started" class="nav-cta">Get Started Free →</a>
+    </div>
+    <button class="nav-hamburger" id="hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="../index.html#how-it-works" onclick="closeMobileMenu()">How it Works</a>
+  <a href="features.html" onclick="closeMobileMenu()">Features</a>
+  <a href="../index.html#security" onclick="closeMobileMenu()">Security</a>
+  <a href="documentation.html" onclick="closeMobileMenu()">Docs</a>
+  <a href="contact.html" onclick="closeMobileMenu()">Contact</a>
+  <a href="../index.html#get-started" onclick="closeMobileMenu()" style="background:var(--accent-soft);color:var(--accent);font-weight:600">Get Started Free →</a>
+</div>
+
+<!-- HERO -->
+<header class="features-hero reveal">
+  <div class="fb-tag"><div class="dot"></div> Deep Dive</div>
+  <h1 class="features-hero-title">Every detail matters.</h1>
+  <p class="features-hero-sub">Explore the powerful algorithms, precision controls, and enterprise-grade security that make Merge Engine the ultimate Salesforce data cleaner.</p>
+</header>
+
+<!-- FEATURE: CHERRY PICKING -->
+<section class="feature-block reveal">
+  <div class="fb-content">
+    <div class="fb-tag">Precision Merging</div>
+    <h2 class="fb-title">Field Value Cherry-Picking</h2>
+    <p class="fb-desc">Don't settle for "all or nothing" merges. Merge Engine allows you to select a surviving primary record, while seamlessly bringing over specific field values from secondary records.</p>
+    <ul class="fb-list">
+      <li><div class="icon">✓</div><span><strong>Surviving Primary:</strong> Choose the best master record with one click.</span></li>
+      <li><div class="icon">✓</div><span><strong>Secondary Overrides:</strong> Selectively pull better phone numbers, emails, or custom fields from duplicates.</span></li>
+      <li><div class="icon">✓</div><span><strong>Visual Feedback:</strong> Instantly see which values will survive in the final merged record.</span></li>
+    </ul>
+  </div>
+  <div class="fb-visual">
+    <img src="../images/field_cherry_picking.png" alt="Field Value Cherry Picking UI">
+  </div>
+</section>
+
+<!-- FEATURE: AI SCORING -->
+<section class="feature-block reverse reveal reveal-delay-1">
+  <div class="fb-content">
+    <div class="fb-tag" style="background:#f3e8ff;color:#9333ea">AI Search</div>
+    <h2 class="fb-title">Intelligent AI Fuzzy Matching</h2>
+    <p class="fb-desc">Our proprietary AI doesn't just look for exact matches. It understands context, typos, and token shuffling to find duplicates you never knew existed.</p>
+    <ul class="fb-list">
+      <li><div class="icon" style="background:#f3e8ff;color:#9333ea">✓</div><span><strong>Jaro-Winkler Algorithm:</strong> Catches misspellings and transposed letters automatically.</span></li>
+      <li><div class="icon" style="background:#f3e8ff;color:#9333ea">✓</div><span><strong>Token Overlap:</strong> Knows that "Microsoft Corporation" and "Corporation Microsoft" are the same entity.</span></li>
+      <li><div class="icon" style="background:#f3e8ff;color:#9333ea">✓</div><span><strong>Confidence Scoring:</strong> Automatically groups duplicates into High (≥90%), Medium, and Low confidence tiers.</span></li>
+    </ul>
+  </div>
+  <div class="fb-visual" style="background:var(--ink);padding:32px;display:flex;align-items:center;justify-content:center">
+    <img src="../images/ai-fuzzy-matching.png" alt="AI Fuzzy Matching Algorithms" style="border-radius:12px">
+  </div>
+</section>
+
+<!-- FEATURE: DOMAIN FILTER & SOQL -->
+<section class="feature-block reveal reveal-delay-1">
+  <div class="fb-content">
+    <div class="fb-tag" style="background:#ffedd5;color:#ea580c">Advanced Queries</div>
+    <h2 class="fb-title">Powerful SOQL Filter Builder</h2>
+    <p class="fb-desc">Need to target a specific subset of records? Build complex queries without writing a single line of code, complete with live SOQL previews.</p>
+    <ul class="fb-list">
+      <li><div class="icon" style="background:#ffedd5;color:#ea580c">✓</div><span><strong>Email Domain Matching:</strong> Instantly group records that share the same company domain (e.g., @company.com).</span></li>
+      <li><div class="icon" style="background:#ffedd5;color:#ea580c">✓</div><span><strong>Public Domain Exclusion:</strong> Automatically exclude common free providers like @gmail.com or @yahoo.com from domain matches.</span></li>
+      <li><div class="icon" style="background:#ffedd5;color:#ea580c">✓</div><span><strong>Exact Duplicates:</strong> Find records sharing exact values across text, ID, or picklist fields.</span></li>
+    </ul>
+  </div>
+  <div class="fb-visual">
+    <img src="../images/email_domain_filter.png" alt="Email Domain Filter and Exclusions UI">
+  </div>
+</section>
+
+<!-- FEATURE: SECURITY & ROLES -->
+<section class="feature-block reverse reveal reveal-delay-1">
+  <div class="fb-content">
+    <div class="fb-tag" style="background:var(--red-soft);color:var(--red)">Enterprise Security</div>
+    <h2 class="fb-title">Role-Based Access Control</h2>
+    <p class="fb-desc">Maintain strict governance over who can view, merge, and export your Salesforce data with built-in permission tiers.</p>
+    <ul class="fb-list">
+      <li><div class="icon" style="background:var(--red-soft);color:var(--red)">✓</div><span><strong>Merge Engine Admin:</strong> Full access to configure settings, execute merges, and export CSV backups.</span></li>
+      <li><div class="icon" style="background:var(--red-soft);color:var(--red)">✓</div><span><strong>Merge Engine User:</strong> Can search and merge records securely, but restricted from exporting data.</span></li>
+      <li><div class="icon" style="background:var(--red-soft);color:var(--red)">✓</div><span><strong>Read-Only Access:</strong> Perfect for analysts. View duplicate groups and data health without the ability to delete.</span></li>
+    </ul>
+  </div>
+  <div class="fb-visual">
+    <img src="../images/role_permissions.png" alt="Role Based Permission Tiers">
+  </div>
+</section>
+
+<!-- FEATURE: RE-PARENTING -->
+<section class="feature-block reveal reveal-delay-1">
+  <div class="fb-content">
+    <div class="fb-tag" style="background:#dbeafe;color:#2563eb">Data Integrity</div>
+    <h2 class="fb-title">Intelligent Child Re-Parenting</h2>
+    <p class="fb-desc">Never orphan a record again. Merge Engine automatically scans all related objects and ensures child records move to the surviving primary record.</p>
+    <ul class="fb-list">
+      <li><div class="icon" style="background:#dbeafe;color:#2563eb">✓</div><span><strong>Cross-Object Support:</strong> Works across both Standard objects and Custom objects seamlessly.</span></li>
+      <li><div class="icon" style="background:#dbeafe;color:#2563eb">✓</div><span><strong>Master-Detail &amp; Lookups:</strong> Handles tightly coupled (Master-Detail) and loosely coupled (Lookup) relationships safely.</span></li>
+      <li><div class="icon" style="background:#dbeafe;color:#2563eb">✓</div><span><strong>Bulk Sequential Merging:</strong> Merges multiple groups automatically while maintaining Salesforce database locks and integrity.</span></li>
+    </ul>
+  </div>
+  <div class="fb-visual" style="background:var(--ink);padding:32px;display:flex;align-items:center;justify-content:center">
+    <img src="../images/intelligent-reparenting.png" alt="Child Record Re-parenting" style="border-radius:12px">
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section" style="margin-top:60px">
+  <div class="cta-inner">
+    <h2>Ready to experience the ultimate cleanup?</h2>
+    <p>Install in 5 minutes. No credit card required. Keep your data inside your org.</p>
+    <a href="https://appexchange.salesforce.com" target="_blank" class="btn-white">Get Merge Engine Free on AppExchange →</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="footer-logo-text">Merge<span>Engine</span></div>
+        <p>The most intelligent duplicate removal tool built natively for Salesforce. Trusted by 500+ admins worldwide.</p>
+      </div>
+      <div class="footer-col">
+        <h5>Product</h5>
+        <a href="features.html">Features</a>
+        <a href="../index.html#how-it-works">How it Works</a>
+        <a href="../index.html#ai">AI Matching</a>
+        <a href="../index.html#security">Security</a>
+      </div>
+      <div class="footer-col">
+        <h5>Resources</h5>
+        <a href="documentation.html">Documentation</a>
+        <a href="documentation.html#installation">Installation Guide</a>
+        <a href="documentation.html#release-notes">Release Notes</a>
+        <a href="https://appexchange.salesforce.com" target="_blank">AppExchange Listing</a>
+      </div>
+      <div class="footer-col">
+        <h5>Support</h5>
+        <a href="contact.html">Contact Support</a>
+        <a href="../index.html#faq">FAQ</a>
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="terms.html">Terms of Service</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div style="font-size:13px;color:rgba(255,255,255,0.35)">© 2025 Merge Engine. Available on Salesforce AppExchange.</div>
+      <div style="display:flex;align-items:center;gap:6px;font-size:13px;color:rgba(255,255,255,0.35)">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        Built natively for Salesforce · No external data storage
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="../js/main.js"></script>
+<script>
+  // Simple intersection observer for reveal effects
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if(entry.isIntersecting) {
+        entry.target.classList.add('active');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+</script>
+</body>
+</html>
