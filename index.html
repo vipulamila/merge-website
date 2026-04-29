@@ -362,31 +362,63 @@
       <a href="#get-started" class="btn-primary" style="display:inline-flex">Try AI Search Free →</a>
     </div>
     <div class="ai-visual reveal reveal-delay-1">
-      <div style="font-size:12px;font-weight:600;color:rgba(255,255,255,0.5);text-transform:uppercase;letter-spacing:0.8px;margin-bottom:14px">Select Fields to Compare</div>
+      <div style="font-size:11px;font-weight:700;color:var(--accent);text-transform:uppercase;letter-spacing:1px;margin-bottom:16px;display:flex;align-items:center;gap:8px">
+        <div style="width:12px;height:2px;background:var(--accent)"></div> Select Comparison Logic
+      </div>
       <div class="ai-field-grid">
         <div class="ai-field-chip selected">
-          <div>Name <span style="font-size:10px;opacity:0.7">STRING</span></div>
+          <div style="display:flex;justify-content:space-between;align-items:center;width:100%">
+            <span>Name</span>
+            <span style="font-size:9px;color:var(--accent);background:var(--accent-soft);padding:2px 6px;border-radius:4px">STRING</span>
+          </div>
           <div class="ai-mode-row">
             <button class="ai-mode-btn active">Fuzzy</button>
             <button class="ai-mode-btn">Exact</button>
           </div>
         </div>
         <div class="ai-field-chip selected">
-          <div>Email <span style="font-size:10px;opacity:0.7">EMAIL</span></div>
+          <div style="display:flex;justify-content:space-between;align-items:center;width:100%">
+            <span>Email</span>
+            <span style="font-size:9px;color:var(--accent);background:var(--accent-soft);padding:2px 6px;border-radius:4px">EMAIL</span>
+          </div>
           <div class="ai-mode-row">
             <button class="ai-mode-btn">Fuzzy</button>
             <button class="ai-mode-btn active">Exact</button>
           </div>
         </div>
-        <div class="ai-field-chip unselected">Phone <span style="font-size:10px">PHONE</span></div>
-        <div class="ai-field-chip unselected">Company <span style="font-size:10px">STRING</span></div>
+        <div class="ai-field-chip unselected">
+          <div style="display:flex;justify-content:space-between;align-items:center;width:100%;gap:12px">
+            <span>Phone</span>
+            <span style="font-size:9px;opacity:0.5">PHONE</span>
+          </div>
+        </div>
+        <div class="ai-field-chip unselected">
+          <div style="display:flex;justify-content:space-between;align-items:center;width:100%;gap:12px">
+            <span>Company</span>
+            <span style="font-size:9px;opacity:0.5">STRING</span>
+          </div>
+        </div>
       </div>
-      <div class="ai-result-preview" style="margin-top:20px">
-        <div style="padding:10px 14px;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.6px;color:rgba(255,255,255,0.35);border-bottom:1px solid rgba(255,255,255,0.06)">AI Duplicate Groups Found</div>
-        <div class="ai-result-row"><div class="ai-match-pct">97%</div><div style="flex:1">John Smith / J. Smith / John S.</div><div class="ai-match-field">Name · Fuzzy</div></div>
-        <div class="ai-result-row"><div class="ai-match-pct">100%</div><div style="flex:1">sarah@acme.com (3 contacts)</div><div class="ai-match-field">Email · Exact</div></div>
-        <div class="ai-result-row"><div class="ai-match-pct">91%</div><div style="flex:1">Acme Corp / Acme Corporation</div><div class="ai-match-field">Name · Fuzzy</div></div>
-        <div class="ai-result-row"><div class="ai-match-pct">88%</div><div style="flex:1">Global Tech / GlobalTech Inc</div><div class="ai-match-field">Name · Fuzzy</div></div>
+
+      <div class="ai-result-preview" style="margin-top:28px; background:rgba(255,255,255,0.5); backdrop-filter:blur(4px)">
+        <div style="padding:14px 18px;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.8px;color:var(--ink);background:rgba(15,23,42,0.03);border-bottom:1px solid rgba(15,23,42,0.05)">
+          AI Discovery Results
+        </div>
+        <div class="ai-result-row">
+          <div class="ai-match-pct">97%</div>
+          <div style="flex:1;font-weight:500">John Smith / J. Smith / John S.</div>
+          <div class="ai-match-field" style="background:var(--accent-soft);padding:2px 8px;border-radius:4px;font-weight:600">Name · Fuzzy</div>
+        </div>
+        <div class="ai-result-row">
+          <div class="ai-match-pct">100%</div>
+          <div style="flex:1;font-weight:500">sarah@acme.com <span style="opacity:0.5;font-weight:400">(3 contacts)</span></div>
+          <div class="ai-match-field" style="background:var(--accent-soft);padding:2px 8px;border-radius:4px;font-weight:600">Email · Exact</div>
+        </div>
+        <div class="ai-result-row">
+          <div class="ai-match-pct">91%</div>
+          <div style="flex:1;font-weight:500">Acme Corp / Acme Corporation</div>
+          <div class="ai-match-field" style="background:var(--accent-soft);padding:2px 8px;border-radius:4px;font-weight:600">Name · Fuzzy</div>
+        </div>
       </div>
     </div>
   </div>
